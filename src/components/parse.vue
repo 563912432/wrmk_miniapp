@@ -19,7 +19,9 @@
             </mt-badge>
             <span v-html="exam.title"></span></div>
           <div class="row">
-            <p v-for="(opt, index) in (exam.option?JSON.parse(exam.option):[])"><span style="color: #66ccff">{{az[index]}}</span>、{{opt}}</p>
+            <p v-for="(opt, index) in (exam.option?JSON.parse(exam.option):[])">
+              <span style="color: #66ccff">{{az[index]}}</span>、<span v-html="opt"></span>
+            </p>
           </div>
           <div class="row">
             <mt-badge size="small" color="#57bacd">
@@ -89,7 +91,7 @@
             <div v-html="title"></div>
             <div style="margin: 5px 10px">
               <div v-for="(opt, opt_index) in exam.option[title_index]">
-                <span style="color: #66ccff">{{az[opt_index]}}</span>、{{opt}}
+                <span style="color: #66ccff">{{az[opt_index]}}</span>、<span v-html="opt"></span>
               </div>
               <div class="row">
                 <mt-badge size="small" color="#57bacd">我的答案</mt-badge>
@@ -139,7 +141,7 @@
           <div style="margin: 5px 10px">
             <mt-badge size="small" color="#57bacd">公共选项</mt-badge>
             <div class="row" v-for="(opt, opt_index) in exam.option">
-              <span style="color: #66ccff">{{az[opt_index]}}</span>、{{opt}}
+              <span style="color: #66ccff">{{az[opt_index]}}</span>、<span v-html="opt"></span>
             </div>
           </div>
           <div class="row" v-for="(title, title_index) in exam.title">

@@ -100,7 +100,6 @@
   .wrap{
     width: 100%;
     height: 100%;
-    // background-color: #f1f1f1;
     display: flex;
     flex-direction: column;
   }

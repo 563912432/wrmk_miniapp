@@ -87,7 +87,6 @@
     background-color: #fff;
     width: 100%;
     height: auto;
-    // border-top: 1px solid #eeeff3;
   }
   .wrap-pic{width: 25%;}
   .wrap-pic img{width:100%; border-radius: 5px;}

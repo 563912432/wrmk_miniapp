@@ -51,7 +51,6 @@
     background-color: #fff;
     width: 100%;
     height: auto;
-    // border-top: 1px solid #eeeff3;
   }
   .wrap-title{
 

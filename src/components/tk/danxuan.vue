@@ -31,12 +31,14 @@
         let az = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
         let opt = []
         let options = (typeof(this.exam.option)=='string' ? JSON.parse(this.exam.option) : [])
+        console.log(options)
         for (let i = 0; i < options.length; i++) {
           opt.push({
             label: options[i],
             value: az[i]
           })
         }
+        console.log(opt)
         return opt
       }
     },
