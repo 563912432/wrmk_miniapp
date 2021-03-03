@@ -43,8 +43,9 @@
         let az = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
         let opt = []
         for (let i = 0; i < this.exam.option.length; i++) {
+          let label = this.exam.options[i].replace(/&nbsp;/g, '').replace(/&quot;/g, '')
           opt.push({
-            label: this.exam.option[i],
+            label: label,
             value: az[i]
           })
         }

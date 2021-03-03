@@ -33,7 +33,13 @@
             <mt-badge size="small" color="#57bacd">
               正确答案
             </mt-badge>
-            {{exam.right_answer.toString()}}
+<!--            {{exam.right_answer.toString()}}-->
+            <template v-if="+exam.type_cate === typeCate.duoxuan">
+              {{JSON.parse(exam.right_answer).toString()}}
+            </template>
+            <template v-else>
+              {{exam.right_answer}}
+            </template>
           </div>
           <div class="row">
             <mt-badge size="small" color="#57bacd">名师解析</mt-badge>
@@ -251,7 +257,14 @@
           for (let n in this.userAnswer) {
             if (typeof number === 'string') {
               if (number === this.userAnswer[n].id) {
-                return this.userAnswer[n].val.toString()
+                // return this.userAnswer[n].val.toString()
+                let arrTmp = this.userAnswer[n].val
+                if (Array.isArray(arrTmp)) {
+                  let arrSort = arrTmp.slice().sort()
+                  return arrSort.toString()
+                }
+                return  arrTmp
+
               }
             } else if (typeof number === 'object') {
               if (number[0] === this.userAnswer[n].id) {

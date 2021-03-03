@@ -32,8 +32,9 @@
         let opt = []
         let options = (typeof(this.exam.option)=='string' ? JSON.parse(this.exam.option) : [])
         for (let i = 0; i < options.length; i++) {
+          let label = options[i].replace(/&nbsp;/g, '').replace(/&quot;/g, '')
           opt.push({
-            label: options[i],
+            label: label,
             value: az[i]
           })
         }
